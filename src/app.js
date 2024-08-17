@@ -10,7 +10,7 @@ import cors from 'cors';
  import saveCertificateRouter from "./routes/saveCertificate.routes.js";
 const app = express();
 app.use(cors({
-  origin: ['https://admissioportal.vercel.app/'],
+  origin: 'https://admissioportal.vercel.app',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add the HTTP methods you want to allow
 }));
