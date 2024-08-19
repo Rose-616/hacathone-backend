@@ -12,6 +12,12 @@ const userSchema = new Schema(
             trim: true, 
             index: true
         },
+         result: {
+            type: String,
+            enum: ['pending', 'pass', 'fail'], // Define the possible values
+            default: 'pending', // Set the default value to 'pending'
+            required: true
+          },
         email: {
             type: String,
             required: true,
