@@ -28,7 +28,7 @@ router.route('/register').post(
 router.route("/logout").post(logoutUser)
 
 // Protected route for user profile
-router.route("/profile").get(verifyJWT , (req, res) => {
+router.route("/profile").get(verifyUserProfile, (req, res) => {
     // Access the authenticated user using req.user
     console.log("Profile Route hitted")
     const user = req.user;
