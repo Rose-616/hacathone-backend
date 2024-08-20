@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/save-certificate", saveCertificateRouter);
 
-app.use("/api/Admin", adminRouter);
+app.use("/api/admin", adminRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/product", productRouter);
 app.use("/api/v1/blog", blogRouter);
