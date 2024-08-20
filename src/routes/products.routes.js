@@ -2,7 +2,7 @@ import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middlerware.js"; //for creating protected route
 import { Product } from "../models/product.model.js";
 // import {upload} from "../middlewares/multer.middleware.js"
-import createProductController from "../controllers/admin.controller.js";
+// import createProductController from "../controllers/admin.controller.js";
 
 const productRouter = Router();
 
