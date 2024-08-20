@@ -7,6 +7,7 @@ import { verifyJWT,verifyUserProfile } from "../middlewares/auth.middlerware.js"
 import adminMiddlerware from "../middlewares/admin.middlerware.js"
 import {User} from "../models/user.model.js"; //getting Data from user model file
 import bcrypt from "bcrypt"
+import Notification from "../models/notification.model.js"; //getting Data from Notificaiton model file
 
 const router = Router()
 
@@ -126,6 +127,22 @@ router.route("/profile").get(verifyUserProfile, (req, res) => {
     }
   });
 
+
+
+
+  //Notification Fetching 
+
+
+router.route('/notifications').get(verifyUserProfile, async (req, res) => {
+  try {
+    // Fetch notifications from the database
+    const notifications = await Notification.find().sort({ createdAt: -1 }); // Sort by newest first
+    res.status(200).json({ notifications });
+  } catch (error) {
+    console.error('Error fetching notifications:', error);
+    res.status(500).json({ message: 'Failed to fetch notifications', error: error.message });
+  }
+});
   
 router.route("/refresh-token").post(refreshAccessToken)
 
